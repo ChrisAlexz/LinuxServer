@@ -13,7 +13,15 @@ A high-performance HTTP/1.1 server built from scratch in C++ using Linux-native 
 
 ## Benchmark
 
-Tested with `wrk` on WSL2 (Ubuntu):
+## Benchmark
+
+WSL2 (local, 8-core Ryzen 5 5600):
+wrk -t4 -c100 -d10s http://localhost:8080/
+→ 36,000 req/s | 1.68ms avg latency
+
+AWS EC2 t3.micro (Ubuntu, us-east-1):
+wrk -t4 -c100 -d10s http://localhost:8080/
+→ 18,000 req/s | 3.36ms avg latency
 
 ## Build & Run
 
